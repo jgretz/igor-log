@@ -1,22 +1,16 @@
-import chalk from 'chalk';
-
-// at some point we will want to redirect this
-// but for now, we are just going to write to the log
-const write = console.log;
-
-const warning = chalk.yellow;
-const error = chalk.bold.red;
+// eventually we will make this more robust, this is a simple
+// stub to get the routing right
 
 export default {
   log: (message?: any, ...optionalParams: any[]) => {
-    write(message, ...optionalParams);
+    console.log(message, ...optionalParams);
   },
 
   warning: (message?: any, ...optionalParams: any[]) => {
-    write(warning(message), ...optionalParams);
+    console.warn(message, ...optionalParams);
   },
 
   error: (message?: any, ...optionalParams: any[]) => {
-    write(error(message), optionalParams);
+    console.error(message, optionalParams);
   },
 };
